@@ -3,7 +3,8 @@ import { EntriesState } from "./";
 
 type EntriesActionType =
   | { type: "[Entry] Add-Entry"; payload: Entry }
-  | { type: "[Entry] Update-Entry"; payload: Entry };
+  | { type: "[Entry] Update-Entry"; payload: Entry }
+  | { type: "[Entry] Refesh-Entries"; payload: Entry[] };
 
 export const entriesReducer = (state: EntriesState, action: EntriesActionType): EntriesState => {
   switch (action.type) {
@@ -13,6 +14,7 @@ export const entriesReducer = (state: EntriesState, action: EntriesActionType): 
         entries: [...state.entries, action.payload],
       };
     case "[Entry] Update-Entry":
+      console.log("reducer payload",action.payload)
       return {
         ...state,
         entries: state.entries.map((entry) => {
@@ -22,6 +24,12 @@ export const entriesReducer = (state: EntriesState, action: EntriesActionType): 
           }
           return entry;
         }),
+      };
+
+    case "[Entry] Refesh-Entries":
+      return {
+        ...state,
+        entries: [...action.payload],
       };
 
     default:
