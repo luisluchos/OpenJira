@@ -5,7 +5,7 @@ export interface IEntry extends Entry {}
 
 const entrySchema = new Schema({
   description: { type: String, required: true },
-  createdAt: { type: Date },
+  createdAt: { type: Number, required: true ,default:Date.now()},
   status: {
     type: String,
     enum: ["pending", "in-progress", "finished"],

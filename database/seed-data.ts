@@ -13,17 +13,17 @@ export const seedData: SeedData = {
     {
       description: "pending",
       status: "pending",
-      createdAt: Date.now(),
+      createdAt: 1659100683607,
     },
     {
       description: "in progress",
       status: "in-progress",
-      createdAt: Date.now(),
+      createdAt: 1659100683607,
     },
     {
       description: "finished",
       status: "finished",
-      createdAt: Date.now(),
+      createdAt: 1659100683607,
     },
   ],
 };

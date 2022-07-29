@@ -5,10 +5,10 @@ export const DarkTheme = createTheme({
   palette: {
     mode: "dark",
     primary: {
-      main: "#abd699",
+      main: "#00e676",
     },
     secondary: {
-      main: "#c7ddcc",
+      main: "#00b0ff",
     },
     error:{
       main:"#F6116B"
@@ -24,7 +24,7 @@ export const DarkTheme = createTheme({
       defaultProps: {},
       styleOverrides: {
         root: {
-          backgroundColor: "#abd299",
+          backgroundColor: "#263238",
         },
       },
     },

@@ -9,6 +9,7 @@ type EntriesActionType =
 export const entriesReducer = (state: EntriesState, action: EntriesActionType): EntriesState => {
   switch (action.type) {
     case "[Entry] Add-Entry":
+      console.log("[Entry] Add-Entry",action.payload);
       return {
         ...state,
         entries: [...state.entries, action.payload],
