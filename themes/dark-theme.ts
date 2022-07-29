@@ -1,24 +1,32 @@
 import { createTheme } from "@mui/material";
-import { grey } from "@mui/material/colors";
+import { grey, pink } from "@mui/material/colors";
 
 export const DarkTheme = createTheme({
-    palette: {
-        mode: "dark",
-        primary: {
-            main:'#abd699',
-          },
-          secondary: {
-            main: '#c7ddcc',
-          },
-        error: {
-          main: "#FF336B",
+  palette: {
+    mode: "dark",
+    primary: {
+      main: "#abd699",
+    },
+    secondary: {
+      main: "#c7ddcc",
+    },
+    error:{
+      main:"#F6116B"
+
+
+
+    }
+ 
+  
+  },
+  components: {
+    MuiAppBar: {
+      defaultProps: {},
+      styleOverrides: {
+        root: {
+          backgroundColor: "#abd299",
         },
       },
-      components: {
-        MuiAppBar: {
-          defaultProps: {},
-          styleOverrides: {
-            root: {
-              backgroundColor: "#abd699",
-        },},},},})
-   
+    },
+  },
+});
