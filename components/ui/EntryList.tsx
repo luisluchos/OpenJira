@@ -28,7 +28,7 @@ export const EntryList = ({ status }: Props) => {
     console.log("drop", id);
 
     const entry = entries.find((entry) => entry._id === id)!; // ! is a safe way to get the entry
-    updateEntry({ ...entry, status: status });
+    updateEntry({ ...entry, status: status }, false);
     stopDragging()
   };
 
