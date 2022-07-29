@@ -1,4 +1,5 @@
 # Next.JS OpenJira APP
+https://open-jira-beta.herokuapp.com/
 
 local
 
