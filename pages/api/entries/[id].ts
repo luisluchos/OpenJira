@@ -3,6 +3,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import mongoose from "mongoose";
 import { db } from "../../../database";
 import Entry, { IEntry } from "../../../models/Entry";
+import { log } from 'console';
 
 type Data = { message: string } | IEntry | IEntry[];
 
@@ -13,6 +14,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
     return res.status(400).json({ message: "Invalid id" });
   }
 
+  console.log("REQ",req.method);
   switch (req.method) {
     case "GET":
       return getEntry(req, res);
