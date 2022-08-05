@@ -19,7 +19,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
   switch (req.method) {
     case "GET":
       return getEntry(req, res);
-    case "PUT":
+    case "POST":
       return updateEntries(req, res);
 
     default:
@@ -43,6 +43,9 @@ const getEntry = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
   res.status(200).json(findID!);
 };
 
+
+
+
 const updateEntries = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
   console.log("REQ",req.method);
   const { id } = req.query;
@@ -54,7 +57,7 @@ const updateEntries = async (req: NextApiRequest, res: NextApiResponse<Data>) =>
   //check if exist id in db
   if (!entryToUpdate) {
     await db.disconnect();
-    return res.status(404).json({ message: "Entry not found" });
+    return res.status(500).json({ message: "Entry not found" });
   }
 
   // vamos a usasr el body para actualizar description y status, si no viene en el body, ussaremos entryToUpdate.description y entryToUpdate.status

@@ -30,7 +30,7 @@ export const EntriesProvider = ({ children }: Props) => {
   const updateEntry = async ({ _id, description, status }: Entry, showSnackbar=false) => {
     console.log("updateEntry", _id, description, status);
     try {
-      const { data } = await entriesApi.put<Entry>(`/entries/${_id}`, { description, status });
+      const { data } = await entriesApi.post<Entry>(`/entries/${_id}`, { description, status });
       dispatch({ type: "[Entry] Update-Entry", payload: data });
 
       if (showSnackbar) {
